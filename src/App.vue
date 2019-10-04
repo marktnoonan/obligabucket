@@ -122,7 +122,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   padding: 0;
 }
 
-input {
+input, select, button {
   font: inherit;
 }
 
@@ -133,5 +133,9 @@ input {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+body {
+  background-color: #f3f6fc
 }
 </style>
