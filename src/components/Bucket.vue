@@ -11,7 +11,7 @@
       <strong>how long</strong> you think they will take, and
       <strong>how sure</strong> you are about how long they will take.
     </p>
-    <p class="body-text">All data is preserved in your browser's local storage, but nowhere else. Made by Mark Noonan (<a href="https://twitter.com/marktnoonan">@marknoonan</a>). Not even a version 0.</p>
+    <p class="body-text">All data is preserved in your browser's local storage, but nowhere else. Made by Mark Noonan (<a href="https://twitter.com/marktnoonan">@marktnoonan</a>). Not even a version 0.</p>
     <hr />
     <details open>
       <summary>
