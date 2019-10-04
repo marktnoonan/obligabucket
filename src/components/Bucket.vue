@@ -11,7 +11,7 @@
       <strong>how long</strong> you think they will take, and
       <strong>how sure</strong> you are about how long they will take.
     </p>
-    <p>All data is preserved in your browser's in local storage, but nowhere else.</p>
+    <p class="body-text">All data is preserved in your browser's local storage, but nowhere else. Made by Mark Noonan (<a href="https://twitter.com/marktnoonan">@marknoonan</a>) to help me figure my week out.</p>
     <hr />
     <details open>
       <summary>
@@ -336,6 +336,10 @@ summary:focus {
   outline: 1px solid rgba(0, 0, 0, 0.4);
 }
 
+ol li {
+  margin-bottom: 10px;
+}
+
 @media screen and (max-width: 600px) {
   .results {
     flex-direction: column;
@@ -359,6 +363,12 @@ summary:focus {
   input,
   select {
     width: 100%;
+  }
+  ol {
+    padding-left: 12px;
+  }
+  ol li {
+    margin-bottom: 20px;
   }
 }
 </style>
