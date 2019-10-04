@@ -352,5 +352,9 @@ summary:focus {
     margin-right: 0;
     margin-left: auto;
   }
+  input,
+  select {
+    width: 100%;
+  }
 }
 </style>
