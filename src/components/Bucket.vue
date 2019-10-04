@@ -5,7 +5,7 @@
       Obligabucket is a like
       <mark>bucket</mark> for your
       <mark>obligations</mark> that does
-      <mark>math</mark>. To do the math, it first needs to two things: the size of your your bucket, and what-all you're trying to jam in there this week. This page asks you for your
+      <mark>maths</mark>. To do the maths, it first needs to know two things: the size of your your bucket, and what exactly you're trying to jam in there this week. This page asks you for your
       <strong>availabilty</strong>, and the
       <strong>tasks</strong> you want to do,
       <strong>how long</strong> you think they will take, and
@@ -72,7 +72,7 @@
       </form>
     </details>
     <hr />
-    <section class="summary">
+    <section class="results">
       <div class="totals">
         <h2>Results</h2>
         <p class="total-possible">
@@ -232,7 +232,7 @@ task schema:
   font-size: 20px;
   text-align: left;
 }
-.summary {
+.results {
   margin: 12px 0;
   display: flex;
 }
@@ -330,5 +330,27 @@ summary::-webkit-details-marker {
 
 summary:focus {
   outline: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+@media screen and (max-width: 600px) {
+  .results {
+    flex-direction: column;
+  }
+  .tasks {
+    margin-left: 0;
+  }
+  .totals {
+    width: unset;
+  }
+  .o-form {
+    flex-direction: column;
+  }
+  .add-button {
+    position: relative;
+    bottom: unset;
+    display: block;
+    margin-right: 0;
+    margin-left: auto;
+  }
 }
 </style>
