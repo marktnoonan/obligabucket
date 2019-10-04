@@ -11,7 +11,7 @@
       <strong>how long</strong> you think they will take, and
       <strong>how sure</strong> you are about how long they will take.
     </p>
-    <p>All data is preserved your browser's in local storage, but nowhere else.</p>
+    <p>All data is preserved in your browser's in local storage, but nowhere else.</p>
     <hr />
     <details open>
       <summary>
