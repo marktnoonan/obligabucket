@@ -34,11 +34,11 @@
         <li>Subtract necessary breaks (an hour a day seems reasonable).</li>
         <li>Pull out all recurring meetings, stand-ups, check-ins, and 1:1s. You can't schedule anything else during those times: you already know what you're doing then.</li>
         <li>Now think about friction caused by that existing recurring work. Meetings require some preparation before, and a little cooldown period after. Add about 15 minutes to every meeting just for getting in and out.</li>
-        <li>Now just think about other essential work things that you have to do. This includes taking time to socialize with your coworkers, as well as helping with things other people are working on, and answering questions or explaining your work to others. Maybe this is another hour in the day, maybe less, maybe more.</li>
+        <li>Now just think about other essential work things that you have to do. This includes taking time to socialize with your coworkers during the day, as well as helping with things other people are working on, and answering questions or explaining your work to others. Maybe this is another hour in the day, maybe less, maybe more.</li>
       </ul>
       <p class="body-text">
         If you do this exercise and find you've come up with
-        <i>half of your workweek is meetings, eating, using the restroom, and just being a human being in general</i> ... that's great. You have 20 hours left to do what people probably think of as "your job". As long as you don't tell people you're going to do 40 hours of work those 20 hours, you shouldn't get overstretched.
+        <i>half of your workweek is meetings, eating, using the restroom, and just being a human being in general</i> ... so be it! You have 20 hours left to do what people probably think of as "your job". As long as you don't tell people you're going to do 40 hours of work those 20 hours, things are probably gonna turn out OK.
       </p>
     </details>
     <hr />
