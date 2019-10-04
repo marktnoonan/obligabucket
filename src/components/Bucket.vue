@@ -42,7 +42,7 @@
       </p>
     </details>
     <hr />
-    <details open>
+    <details ref="taskDetailsEl" open>
       <summary>
         <h2>2. Tasks You're Committing To in the Next Five Days</h2>
       </summary>
@@ -67,7 +67,7 @@
           </select>
         </label>
         <div>
-          <button class="add-button">Add</button>
+          <button class="add-button">{{saveButtonText}}</button>
         </div>
       </form>
     </details>
@@ -118,7 +118,8 @@ export default {
       newTaskName: "",
       newTaskHours: "",
       newTaskQuality: "ballpark",
-      tasks: []
+      tasks: [],
+      saveButtonText: "Add"
     };
   },
   methods: {
@@ -144,12 +145,15 @@ export default {
       this.newTaskName = task.name;
       this.newTaskHours = task.hours;
       this.newTaskQuality = task.quality;
+      this.saveButtonText = "Save"
+      this.$refs.taskDetailsEl.open = true;
       this.$refs.newtask.focus();
     },
     resetForm() {
-      (this.newTaskName = ""),
-        (this.newTaskHours = ""),
-        (this.newTaskQuality = "ballpark");
+      this.newTaskName = "";
+      this.newTaskHours = "";
+      this.newTaskQuality = "ballpark";
+      this.saveButtonText = "Add"
     }
   },
   computed: {
