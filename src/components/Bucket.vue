@@ -119,11 +119,17 @@ export default {
       newTaskHours: "",
       newTaskQuality: "ballpark",
       tasks: [],
-      saveButtonText: "Add"
+      saveButtonText: "Add",
+      editing: false,
+      editingId: ""
     };
   },
   methods: {
     addTask() {
+      if (this.editing) {
+        this.deleteTask(this.editingId);
+        this.editing = false;
+      }
       this.tasks.push({
         name: this.newTaskName,
         hours: this.newTaskHours,
@@ -141,6 +147,8 @@ export default {
       this.tasks.splice(targetIndex, 1);
     },
     editTask(id) {
+      this.editing = true;
+      this.editingId = id;
       let task = this.tasks.find(item => item.id == id);
       this.newTaskName = task.name;
       this.newTaskHours = task.hours;
