@@ -147,9 +147,9 @@ export default {
       this.tasks.splice(targetIndex, 1);
     },
     editTask(id) {
+      let task = this.tasks.find(item => item.id == id);
       this.editing = true;
       this.editingId = id;
-      let task = this.tasks.find(item => item.id == id);
       this.newTaskName = task.name;
       this.newTaskHours = task.hours;
       this.newTaskQuality = task.quality;
@@ -172,14 +172,12 @@ export default {
       let totalTaskHours = this.tasks.reduce((accumulator, currentItem) => {
         return accumulator + parseInt(currentItem.hours);
       }, 0);
-      console.log({ totalTaskHours });
       return parseInt(this.totalWeeklyHours) - totalTaskHours;
     },
     wiggleRoom() {
       if (!this.tasks.length) {
         return "🏖 Infinite. You have no tasks.";
       }
-
       let dailyHours = Math.round(parseInt(this.totalWeeklyHours) / 5);
       let daysOfWiggleRoom = Math.floor(this.hoursRemaining / dailyHours);
       if (daysOfWiggleRoom < 0) {
@@ -222,20 +220,9 @@ export default {
       );
   }
 };
-
-/*
-task schema:
-{
-  id: String
-  name: String
-  estimate: Number
-  estimateQuality: String ("precise", "rough", "guess")
-}
-*/
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style>
 .hello {
   width: 800px;
   max-width: 97vw;
