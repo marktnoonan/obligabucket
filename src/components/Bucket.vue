@@ -6,10 +6,10 @@
       <mark>bucket</mark> for your
       <mark>obligations</mark> that does
       <mark>maths</mark>. To do the maths, it first needs to know two things: the size of your your bucket, and what exactly you're trying to jam in there this week. This page asks you for your
-      <strong>availabilty</strong>, and the
+      <strong>availability</strong>, and the
       <strong>tasks</strong> you want to do,
       <strong>how long</strong> you think they will take, and
-      <strong>how sure</strong> you are about how long they will take.
+      <strong>how sure you are</strong> about how long they will take.
     </p>
     <p class="body-text">All data is preserved in your browser's local storage, but nowhere else. Made by Mark Noonan (<a href="https://twitter.com/marktnoonan">@marktnoonan</a>). Not even a version 0.</p>
     <hr />
