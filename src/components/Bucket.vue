@@ -5,13 +5,16 @@
       Obligabucket is a like
       <mark>bucket</mark> for your
       <mark>obligations</mark> that does
-      <mark>maths</mark>. To do the maths, it first needs to know two things: the size of your your bucket, and what exactly you're trying to jam in there this week. This page asks you for your
+      maths. To do the maths, it first needs to know two things: the size of your your bucket, and what exactly you're trying to jam in there this week. This page asks you for your
       <strong>availability</strong>, and the
       <strong>tasks</strong> you want to do,
       <strong>how long</strong> you think they will take, and
       <strong>how sure you are</strong> about how long they will take.
     </p>
-    <p class="body-text">All data is preserved in your browser's local storage, but nowhere else. Made by Mark Noonan (<a href="https://twitter.com/marktnoonan">@marktnoonan</a>). Not even a version 0.</p>
+    <p class="body-text">
+      All data is preserved in your browser's local storage, but nowhere else. Made by Mark Noonan (
+      <a href="https://twitter.com/marktnoonan">@marktnoonan</a>). Not even a version 0.
+    </p>
     <hr />
     <details open>
       <summary>
@@ -95,13 +98,19 @@
         <h2>Tasks</h2>
         <p v-if="!tasks.length">None</p>
         <ol>
-          <li v-for="task in tasks" :key="task.id">
-            {{task.name}} - {{task.quality}} - {{task.hours}} hour{{task.hours > 1 ? "s" : ""}}
-            <button
-              class="remove"
-              @click="deleteTask(task.id)"
-            >Remove</button>
-            <button class="edit" @click="editTask(task.id)">Edit</button>
+          <li class="results-item" v-for="task in tasks" :key="task.id">
+            <div>
+              {{task.name}} - {{task.quality}} - {{task.hours}} hour{{task.hours > 1 ? "s" : ""}}
+              <button
+                class="remove"
+                @click="deleteTask(task.id)"
+              >Remove</button>
+              <button class="edit" @click="editTask(task.id)">Edit</button>
+            </div>
+            <Checklist 
+              :initialList="task.checklist" 
+              :parentId="task.id"
+              @updateChecklist="updateCheckList"/>
           </li>
         </ol>
       </div>
@@ -110,8 +119,12 @@
 </template>
 
 <script>
+import Checklist from "./Checklist";
 export default {
   name: "Bucket",
+  components: {
+    Checklist
+  },
   data() {
     return {
       totalWeeklyHours: 20,
@@ -134,6 +147,7 @@ export default {
         name: this.newTaskName,
         hours: this.newTaskHours,
         quality: this.newTaskQuality,
+        checklist: [],
         id: (
           this.newTaskName +
           this.newTaskHours +
@@ -153,15 +167,21 @@ export default {
       this.newTaskName = task.name;
       this.newTaskHours = task.hours;
       this.newTaskQuality = task.quality;
-      this.saveButtonText = "Save"
+      this.saveButtonText = "Save";
       this.$refs.taskDetailsEl.open = true;
       this.$refs.newtask.focus();
+    },
+
+    updateCheckList({id, list}){
+      console.log(id, list)
+      let task = this.tasks.find(item => item.id == id);
+      task.checklist = list
     },
     resetForm() {
       this.newTaskName = "";
       this.newTaskHours = "";
       this.newTaskQuality = "ballpark";
-      this.saveButtonText = "Add"
+      this.saveButtonText = "Add";
     }
   },
   computed: {
@@ -318,17 +338,28 @@ hr {
 summary {
   position: relative;
   outline: none;
+  transition: all .2s ease
 }
 
 summary::-webkit-details-marker {
   color: green;
   position: absolute;
-  left: -20px;
+  left: -18px;
   top: 12px;
+  cursor: default;
 }
 
 summary:focus {
   outline: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+summary:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+summary h2,
+summary h3 {
+  cursor: default;
 }
 
 ol li {
@@ -365,5 +396,9 @@ ol li {
   ol li {
     margin-bottom: 20px;
   }
+}
+
+.results-item {
+  margin-bottom: 20px;
 }
 </style>
