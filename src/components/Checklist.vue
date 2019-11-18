@@ -72,7 +72,8 @@ input[type="checkbox"] {
 }
 input[type="text"] {
   height: 20px;
-  width: 150px;
+  width: calc(100% - 100px);
+  margin-left: 26px;
 }
 .checklist-title {
   margin: 0;
