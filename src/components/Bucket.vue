@@ -100,7 +100,8 @@
         <ol>
           <li class="results-item" v-for="task in tasks" :key="task.id">
             <div>
-              {{task.name}} - {{task.quality}} - {{task.hours}} hour{{task.hours > 1 ? "s" : ""}}
+              <div class="results-text">{{task.name}}</div>
+              {{task.quality}} - {{task.hours}} hour{{task.hours > 1 ? "s" : ""}}
               <button
                 class="remove"
                 @click="deleteTask(task.id)"
@@ -340,6 +341,11 @@ hr {
 
 .body-text {
   font-size: 16px;
+}
+
+.results-text {
+  font-weight: 500;
+  font-size: 1.2em;
 }
 
 summary {
