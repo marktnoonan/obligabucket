@@ -131,6 +131,7 @@ export default {
       newTaskName: "",
       newTaskHours: "",
       newTaskQuality: "ballpark",
+      newTaskChecklist: [],
       tasks: [],
       saveButtonText: "Add",
       editing: false,
@@ -147,7 +148,7 @@ export default {
         name: this.newTaskName,
         hours: this.newTaskHours,
         quality: this.newTaskQuality,
-        checklist: [],
+        checklist: this.newTaskChecklist,
         id: (
           this.newTaskName +
           this.newTaskHours +
@@ -167,6 +168,7 @@ export default {
       this.newTaskName = task.name;
       this.newTaskHours = task.hours;
       this.newTaskQuality = task.quality;
+      this.newTaskChecklist = task.checklist;
       this.saveButtonText = "Save";
       this.$refs.taskDetailsEl.open = true;
       this.$refs.newtask.focus();

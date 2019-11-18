@@ -93,6 +93,7 @@ summary::-webkit-details-marker {
 }
 
 details {
+  margin-top: 10px;
   background-color: lavender;
   padding: 6px 20px 4px;
   border-radius: 9px;
