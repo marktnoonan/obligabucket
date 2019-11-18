@@ -101,12 +101,12 @@
           <li class="results-item" v-for="task in tasks" :key="task.id">
             <div>
               <div class="results-text">{{task.name}}</div>
-              {{task.quality}} - {{task.hours}} hour{{task.hours > 1 ? "s" : ""}}
+              <div class="results-meta">{{task.quality}} - {{task.hours}} hour{{task.hours > 1 ? "s" : ""}}
               <button
                 class="remove"
                 @click="deleteTask(task.id)"
               >Remove</button>
-              <button class="edit" @click="editTask(task.id)">Edit</button>
+              <button class="edit" @click="editTask(task.id)">Edit</button></div>
             </div>
             <Checklist 
               :initialList="task.checklist" 
@@ -258,8 +258,17 @@ export default {
   margin: 12px 0;
   display: flex;
 }
+.results-meta:first-letter {
+  text-transform: uppercase;
+}
+
+.results-meta {
+  font-size: 0.9em;
+  margin-top: 4px;
+}
 .tasks {
   margin-left: 40px;
+  flex: 1;
 }
 input,
 select,
