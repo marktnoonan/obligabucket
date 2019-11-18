@@ -86,6 +86,11 @@ input[type="text"] {
   margin: 0;
 }
 
+summary {
+  padding: 2px;
+  padding-left: 6px;
+}
+
 summary::-webkit-details-marker {
   color: green;
   position: absolute;

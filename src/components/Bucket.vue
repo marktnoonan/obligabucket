@@ -351,18 +351,22 @@ summary {
 summary::-webkit-details-marker {
   color: green;
   position: absolute;
-  left: -18px;
+  left: -24px;
   top: 12px;
   cursor: default;
 }
 
-summary:focus {
-  outline: 1px solid rgba(0, 0, 0, 0.4);
+*:focus {
+  outline: 3px auto green;
+}
+
+[data-whatinput="mouse"] *:not(input):not(button):not(select):focus {
+  outline: none;
 }
 
 summary:hover {
-  background-color: rgba(0, 0, 0, 0.1);
-}
+  background-color: rgba(0,0,0,.1);
+} 
 
 summary h2,
 summary h3 {
