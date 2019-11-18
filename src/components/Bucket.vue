@@ -292,11 +292,11 @@ button {
   padding: 0.4em 1em;
   border-radius: 10px;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  transition: border-color .3 linear;
+  transition: border-color .3s linear;
 }
 
 button:hover {
-  border-color: rgba(0, 0, 0, 0.8)
+  border-color: rgba(0, 0, 0, 0.6)
 }
 
 button.remove,
