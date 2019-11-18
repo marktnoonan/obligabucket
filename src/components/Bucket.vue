@@ -426,4 +426,8 @@ ol li {
 .results-item {
   margin-bottom: 20px;
 }
+
+strong {
+  font-weight: 500;
+}
 </style>
