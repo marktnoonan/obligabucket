@@ -12,8 +12,7 @@
       <strong>how sure you are</strong> about how long they will take.
     </p>
     <p class="body-text">
-      All data is preserved in your browser's local storage, but nowhere else. Made by Mark Noonan (
-      <a href="https://twitter.com/marktnoonan">@marktnoonan</a>). Not even a version 0.
+      All data is preserved in your browser's local storage, but not transmitted or stored anywhere else. Made by Mark Noonan (<a href="https://twitter.com/marktnoonan">@marktnoonan</a>) as an experiment to help me manage my time better. Feel free to try it out. The code for this project is available on <a href="https://github.com/marktnoonan/obligabucket">Github</a>.
     </p>
     <hr />
     <details open>
