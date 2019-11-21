@@ -391,7 +391,7 @@ ol li {
   margin-bottom: 10px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
   .results {
     flex-direction: column;
   }
