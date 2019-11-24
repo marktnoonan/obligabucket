@@ -9,8 +9,8 @@
           <input type="checkbox" :checked="item.completed" v-model="item.completed"/>
           {{item.text}}
         </label>
-        <button class="remove" @click="deleteItem(item.text)">Remove</button>
-        <button class="edit" @click="editItem(item.text)">Edit</button>
+        <button v-if="showButtons" class="remove" @click="deleteItem(item.text)">Remove</button>
+        <button v-if="showButtons" class="edit" @click="editItem(item.text)">Edit</button>
       </li>
     </ul>
     <form @submit.prevent="addItem">
@@ -23,7 +23,7 @@
 <script>
 export default {
   name: "Checklist",
-  props: ["initialList", "parentId"],
+  props: ["initialList", "parentId", "showButtons"],
   data() {
     return {
       list: [

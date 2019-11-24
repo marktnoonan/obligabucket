@@ -101,15 +101,23 @@
             <div>
               <div class="results-text">{{task.name}}</div>
               <div class="results-meta">{{task.quality}} - {{task.hours}} hour{{task.hours > 1 ? "s" : ""}}
-              <button
-                class="remove"
-                @click="deleteTask(task.id)"
-              >Remove</button>
-              <button class="edit" @click="editTask(task.id)">Edit</button></div>
+                <button
+                  v-if="showButtons"
+                  class="remove"
+                  @click="deleteTask(task.id)"
+                >Remove</button>
+                <button 
+                  v-if="showButtons" 
+                  class="edit" 
+                  @click="editTask(task.id)"
+                  >Edit</button>
+                <button class="edit" @click="toggleButtons">{{showButtons ? 'Hide' : 'Show'}} Buttons</button>
+              </div>
             </div>
             <Checklist 
               :initialList="task.checklist" 
               :parentId="task.id"
+              :showButtons="showButtons"
               @updateChecklist="updateCheckList"/>
           </li>
         </ol>
@@ -135,7 +143,8 @@ export default {
       tasks: [],
       saveButtonText: "Add",
       editing: false,
-      editingId: ""
+      editingId: "",
+      showButtons: true
     };
   },
   methods: {
@@ -184,6 +193,9 @@ export default {
       this.newTaskHours = "";
       this.newTaskQuality = "ballpark";
       this.saveButtonText = "Add";
+    },
+    toggleButtons() {
+      this.showButtons = !this.showButtons;
     }
   },
   computed: {
