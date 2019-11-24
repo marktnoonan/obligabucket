@@ -3,7 +3,7 @@
     <summary>
       <h3 class="checklist-title">Checklist</h3>
     </summary>
-    <ul class="checklist">
+    <ul class="checklist" ref="checklist">
       <li v-for="item in list" :key="item.text">
         <label :class="{'completed': item.completed}">
           <input type="checkbox" :checked="item.completed" v-model="item.completed"/>
@@ -16,20 +16,23 @@
     <form @submit.prevent="addItem">
       <input type="text" v-model="newItemText" ref="newitem" />
       <button class="edit">{{editing ? "Save" : "Add"}}</button>
-    </form>
+    </form>    
+    <button class="edit" @click="toggleButtons">{{showButtons ? 'Hide' : 'Show'}} Buttons</button>
+    <button class="edit" v-clipboard="clipboardContent">Copy List as Text</button>
   </details>
 </template>
 
 <script>
 export default {
   name: "Checklist",
-  props: ["initialList", "parentId", "showButtons"],
+  props: ["initialList", "parentId"],
   data() {
     return {
       list: [
       ],
       newItemText: "",
-      editing: false
+      editing: false,
+      showButtons: true
     };
   },
   mounted() {
@@ -58,6 +61,12 @@ export default {
       this.list.splice(targetIndex, 1);
       this.newItemText = text;
       this.$refs.newitem.focus();
+    },
+    clipboardContent() {
+      return this.list.map(item => item.text).join('\n')
+    },
+    toggleButtons() {
+      this.showButtons = !this.showButtons;
     }
   }
 };
@@ -73,7 +82,7 @@ input[type="checkbox"] {
 input[type="text"] {
   height: 20px;
   width: calc(100% - 100px);
-  margin-left: 26px;
+  margin-left: 20px;
 }
 .checklist-title {
   margin: 0;

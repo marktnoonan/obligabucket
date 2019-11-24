@@ -102,22 +102,18 @@
               <div class="results-text">{{task.name}}</div>
               <div class="results-meta">{{task.quality}} - {{task.hours}} hour{{task.hours > 1 ? "s" : ""}}
                 <button
-                  v-if="showButtons"
                   class="remove"
                   @click="deleteTask(task.id)"
                 >Remove</button>
                 <button 
-                  v-if="showButtons" 
                   class="edit" 
                   @click="editTask(task.id)"
                   >Edit</button>
-                <button class="edit" @click="toggleButtons">{{showButtons ? 'Hide' : 'Show'}} Buttons</button>
               </div>
             </div>
             <Checklist 
               :initialList="task.checklist" 
               :parentId="task.id"
-              :showButtons="showButtons"
               @updateChecklist="updateCheckList"/>
           </li>
         </ol>
@@ -193,9 +189,6 @@ export default {
       this.newTaskHours = "";
       this.newTaskQuality = "ballpark";
       this.saveButtonText = "Add";
-    },
-    toggleButtons() {
-      this.showButtons = !this.showButtons;
     }
   },
   computed: {
@@ -322,7 +315,7 @@ button:hover {
 
 button.remove,
 button.edit {
-  background-color: salmon;
+  background-color: #c73c2c;
   font-size: 14px;
   padding: 2px 6px;
   position: relative;
