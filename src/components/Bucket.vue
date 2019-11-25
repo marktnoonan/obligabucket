@@ -316,8 +316,8 @@ button:hover {
 button.remove,
 button.edit {
   background-color: #c73c2c;
-  font-size: 14px;
-  padding: 2px 6px;
+  font-size: 12px;
+  padding: 0 4px;
   position: relative;
   top: -2px;
   margin: 0;
