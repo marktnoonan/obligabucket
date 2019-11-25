@@ -306,7 +306,7 @@ button {
   padding: 0.4em 1em;
   border-radius: 10px;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  transition: border-color .2s linear;
+  transition: border-color .2s ease-out;
 }
 
 button:hover {
