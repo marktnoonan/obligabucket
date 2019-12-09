@@ -7,14 +7,21 @@
       <li v-for="item in list" :key="item.text">
         <label :class="{'completed': item.completed}">
           <input type="checkbox" :checked="item.completed" v-model="item.completed"/>
-          {{item.text}}
+          {{item.text}} <a v-if="item.link" :href="item.link" target="_blank">🔗</a>
         </label>
         <button v-if="showButtons" class="remove" @click="deleteItem(item.text)">Remove</button>
         <button v-if="showButtons" class="edit" @click="editItem(item.text)">Edit</button>
       </li>
     </ul>
     <form @submit.prevent="addItem">
-      <input type="text" v-model="newItemText" ref="newitem" />
+      <label>
+        Item text:
+        <input type="text" class="item-text-input" v-model="newItemText" ref="newitem" />
+      </label>
+      <label>
+        Optional Link
+        <input type="text" class="item-link-input" v-model="newItemLink" ref="newitem" />
+      </label>
       <button class="edit">{{editing ? "Save" : "Add"}}</button>
     </form>    
     <button class="edit" @click="toggleButtons">{{showButtons ? 'Hide' : 'Show'}} Buttons</button>
@@ -31,6 +38,7 @@ export default {
       list: [
       ],
       newItemText: "",
+      newItemLink: "",
       editing: false,
       showButtons: true
     };
@@ -44,9 +52,11 @@ export default {
     addItem() {
       this.list.push({
         text: this.newItemText,
+        link: this.newItemLink,
         completed: false
       });
       this.newItemText = "";
+      this.newItemLink = "";
       this.editing = false;
       this.$emit("updateChecklist", { id: this.parentId, list: this.list });
     },
