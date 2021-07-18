@@ -138,4 +138,8 @@ input, select, button {
 body {
   background-color: #f3f6fc
 }
+
+h2, h3 {
+  display: inline;
+}
 </style>
