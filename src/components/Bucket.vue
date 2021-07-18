@@ -173,7 +173,7 @@ export default {
       this.newTaskName = task.name;
       this.newTaskHours = task.hours;
       this.newTaskQuality = task.quality;
-      this.c = task.checklist;
+      this.newTaskChecklist = [...task.checklist];
       this.saveButtonText = "Save";
       this.$refs.taskDetailsEl.open = true;
       this.$refs.newtask.focus();
